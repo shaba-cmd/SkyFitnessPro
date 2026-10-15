@@ -1,0 +1,22 @@
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-top: 50px;
+}
+
+.header_box {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.header__logo {
+  width: 220px;
+  height: 35px;
+}
+
+.header__text {
+  font-size: 18px;
+  color: var(--color-gray);
+}
