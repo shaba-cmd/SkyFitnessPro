@@ -1,5 +1,4 @@
-function App() {
-  return <h1>SkyFitnessPro</h1>;
-}
+import { RouterProvider } from 'react-router-dom';
+import { router } from './routes/router';
 
-export default App;
+export const App = () => <RouterProvider router={router} />;
