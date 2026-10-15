@@ -1,0 +1,16 @@
+:root {
+  --color-accent: #bcec30;
+  --color-accent-hover: #c6ff00;
+  --color-accent-active: #000;
+  --color-accent-sec-hover: #f7f7f7;
+  --color-accent-sec-active: #e9eced;
+  --color-bg: #fafafa;
+  --color-white: #fff;
+  --color-text: #000;
+  --color-gray: #999;
+  --color-error: #db0030;
+  --color-progress: #00c1ff;
+  --radius-card: 30px;
+  --radius-btn: 46px;
+  --shadow-card: 0 4px 67px -12px rgba(0, 0, 0, 0.13);
+}
