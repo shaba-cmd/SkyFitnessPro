@@ -1,4 +1,4 @@
-import { Button } from '@/shared/ui/Button';
+import { Button } from '@/shared/ui/Button/Button';
 import styles from './Header.module.css';
 import logo from '@/shared/assets/logo.svg';
 import { Link } from 'react-router-dom';
