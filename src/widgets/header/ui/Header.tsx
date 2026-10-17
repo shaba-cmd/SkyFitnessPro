@@ -7,13 +7,13 @@ import { ROUTES } from '@/shared/config/routes';
 export const Header = () => {
   return (
     <header className={styles.header}>
-      <div className={styles.header_box}>
+      <div className={styles.box}>
         <Link to={ROUTES.MAIN}>
-          <img className={styles.header__logo} src={logo} alt="SkyFitnesPro" />
+          <img className={styles.logo} src={logo} alt="SkyFitnessPro" />
         </Link>
-        <p className={styles.header__text}>Онлайн-тренировки для занятий дома</p>
+        <p className={styles.text}>Онлайн-тренировки для занятий дома</p>
       </div>
-      <Button>Войти</Button>
+      <Button >Войти</Button>
     </header>
   );
 };
