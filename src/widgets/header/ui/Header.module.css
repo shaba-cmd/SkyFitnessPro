@@ -20,3 +20,7 @@
   font-size: 18px;
   color: var(--color-gray);
 }
+
+.loginBtn {
+  width: 103px;
+}

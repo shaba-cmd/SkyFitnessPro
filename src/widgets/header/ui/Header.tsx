@@ -1,4 +1,4 @@
-import { Button } from '@/shared/ui/Button/Button';
+import { Button } from '@/shared/ui/Button';
 import styles from './Header.module.css';
 import logo from '@/shared/assets/logo.svg';
 import { Link } from 'react-router-dom';
@@ -13,7 +13,7 @@ export const Header = () => {
         </Link>
         <p className={styles.text}>Онлайн-тренировки для занятий дома</p>
       </div>
-      <Button >Войти</Button>
+      <Button className={styles.loginBtn}>Войти</Button>
     </header>
   );
 };

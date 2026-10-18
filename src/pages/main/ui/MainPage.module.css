@@ -1,0 +1,66 @@
+.hero {
+  padding-top: 60px;
+  display: flex;
+  flex-direction: column;
+  gap: 50px;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+}
+
+.title {
+  font-weight: 500;
+  font-size: 60px;
+  line-height: 100%;
+  color: var(--color-text);
+  max-width: 860px;
+}
+
+.bubble {
+  align-self: self-start;
+  font-size: 32px;
+  line-height: 110%;
+  color: var(--color-text-sec);
+  padding: 16px 20px;
+  background-color: var(--color-accent);
+  border-radius: 5px;
+  position: relative;
+}
+
+.bubble::after {
+  content: '';
+  position: absolute;
+  left: 117px;
+  bottom: -18px;
+  width: 30px;
+  height: 35px;
+  background-color: var(--color-accent);
+  clip-path: polygon(45% 0, 100% 36%, 0 100%);
+}
+
+.cards {
+  display: grid;
+  grid-template-columns: repeat(3, 360px);
+  gap: 40px;
+}
+
+@media (max-width: 768px) {
+  .bubble {
+    display: none;
+  }
+}
+
+@media (max-width: 1192px) {
+  .cards {
+    grid-template-columns: repeat(2, 360px);
+  }
+}
+
+@media (max-width: 768px) {
+  .cards {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+}

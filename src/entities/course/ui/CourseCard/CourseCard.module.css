@@ -1,0 +1,42 @@
+.card {
+  width: 100%;
+  background: var(--color-white);
+  border-radius: var(--radius-card);
+  box-shadow: var(--shadow-card);
+}
+
+.img {
+  border-radius: var(--radius-card);
+}
+
+.box {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  padding: 24px 30px 15px 30px;
+}
+
+.title {
+  font-weight: 500;
+  font-size: 32px;
+  line-height: 110%;
+}
+
+.infoBox {
+    display: flex;
+    gap: 6px;
+    flex-wrap: wrap;
+}
+
+.info {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    padding: 10px;
+    white-space: nowrap;
+    flex-shrink: 0;
+    line-height: 110%;
+    color: var(--color-text-sec);
+    background-color: var(--color-accent-sec-hover);
+    border-radius: var(--radius-card);
+}
