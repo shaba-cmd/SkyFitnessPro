@@ -3,7 +3,7 @@ import calendarIcon from '@/shared/assets/icons/calendar.svg';
 import timeIcon from '@/shared/assets/icons/time.svg';
 import difficultyIcon from '@/shared/assets/icons/difficulty.svg';
 import plus from '@/shared/assets/icons/plus.svg';
-import type { Course } from '../../model/types';
+import type { Course } from '@/entities/course'
 import type { ReactNode } from 'react';
 import { getCourseImage } from '@/entities/course/lib/courseImage';
 
@@ -24,20 +24,20 @@ export const CourseCard = ({ course }: Props) => {
       <div className={styles.box}>
         <p className={styles.title}>{course.nameRU}</p>
         <div className={styles.infoBox}>
-          <span className={styles.info}>
+          <div className={styles.info}>
             <img src={calendarIcon} alt="" />
             <p>{course.durationInDays} дней</p>
-          </span>
-          <span className={styles.info}>
+          </div>
+          <div className={styles.info}>
             <img src={timeIcon} alt="" />
             <p>
               {course.dailyDurationInMinutes.from}-{course.dailyDurationInMinutes.to} мин/день
             </p>
-          </span>
-          <span className={styles.info}>
+          </div>
+          <div className={styles.info}>
             <img src={difficultyIcon} alt="" />
             <p>Сложность</p>
-          </span>
+          </div>
         </div>
       </div>
     </article>
