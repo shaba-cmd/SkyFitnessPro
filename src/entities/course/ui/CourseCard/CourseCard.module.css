@@ -5,8 +5,19 @@
   box-shadow: var(--shadow-card);
 }
 
+.imgBox {
+    position: relative;
+}
+
 .img {
   border-radius: var(--radius-card);
+}
+
+.action {
+    position: absolute;
+    top: 23px;
+    right: 23px;
+    cursor: pointer;
 }
 
 .box {

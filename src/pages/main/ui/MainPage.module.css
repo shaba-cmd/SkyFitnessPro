@@ -1,5 +1,6 @@
 .hero {
   padding-top: 60px;
+  padding-bottom: 34px;
   display: flex;
   flex-direction: column;
   gap: 50px;
@@ -46,6 +47,12 @@
   gap: 40px;
 }
 
+.btn {
+  width: 127px;
+  margin-bottom: 81px;
+  align-self: center;
+}
+
 @media (max-width: 768px) {
   .bubble {
     display: none;
@@ -58,9 +65,12 @@
   }
 }
 
-@media (max-width: 768px) {
+@media (max-width: 800px) {
   .cards {
     grid-template-columns: 1fr;
     gap: 24px;
+  }
+  .bubble {
+    display: none;
   }
 }
