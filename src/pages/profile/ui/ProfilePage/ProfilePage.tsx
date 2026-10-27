@@ -1,10 +1,13 @@
+import styles from './ProfilePage.module.css';
 import { useNavigate } from 'react-router-dom';
+import { useCallback, useState } from 'react';
 import { CourseCard, useCourses } from '@/entities/course';
 import { getCourseProgressPercent, useUser } from '@/entities/user';
 import { RemoveCourseButton, useRemoveCourse } from '@/features/remove-course';
+import { useResetCourseProgress } from '@/features/workout-progress';
+import { SelectWorkoutModal } from '@/widgets/select-workout-modal';
 import { Button, ProgressBar } from '@/shared/ui';
 import { ROUTES } from '@/shared/config/routes';
-import styles from './ProfilePage.module.css';
 
 const getButtonText = (progress: number) => {
   if (progress === 0) return 'Начать тренировки';
@@ -17,11 +20,19 @@ export const ProfilePage = () => {
   const { courses, isLoading } = useCourses();
   const { removeCourse } = useRemoveCourse();
   const navigate = useNavigate();
+  const { resetCourseProgress } = useResetCourseProgress();
+  const [selectedCourseId, setSelectedCourseId] = useState<string | null>(null);
+  const closeModal = useCallback(() => setSelectedCourseId(null), []);
 
   if (!user) return null;
 
   const name = user.email.split('@')[0];
   const myCourses = courses.filter((course) => user.selectedCourses.includes(course._id));
+
+  const handleStart = async (courseId: string, progress: number) => {
+    if (progress === 100) await resetCourseProgress(courseId);
+    setSelectedCourseId(courseId);
+  };
 
   return (
     <div className={styles.page}>
@@ -65,12 +76,20 @@ export const ProfilePage = () => {
                   <>
                     <p className={styles.progressLabel}>Прогресс {progress}%</p>
                     <ProgressBar value={progress} />
-                    <Button className={styles.cardBtn}>{getButtonText(progress)}</Button>
+                    <Button
+                      className={styles.cardBtn}
+                      onClick={() => handleStart(course._id, progress)}
+                    >
+                      {getButtonText(progress)}
+                    </Button>
                   </>
                 }
               />
             );
           })}
+          {selectedCourseId && (
+            <SelectWorkoutModal courseId={selectedCourseId} onClose={closeModal} />
+          )}
         </div>
       </section>
     </div>

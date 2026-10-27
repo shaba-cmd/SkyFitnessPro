@@ -5,6 +5,7 @@ import { ROUTES } from '@/shared/config/routes';
 import { CoursePage } from '@/pages/course';
 import { ProfilePage } from '@/pages/profile';
 import { ProtectedRoute } from './ProtectedRoute';
+import { WorkoutPage } from '@/pages/workout';
 
 export const router = createBrowserRouter([
   {
@@ -15,7 +16,10 @@ export const router = createBrowserRouter([
       { path: ROUTES.COURSE, element: <CoursePage /> },
       {
         element: <ProtectedRoute />,
-        children: [{ path: ROUTES.PROFILE, element: <ProfilePage /> }],
+        children: [
+          { path: ROUTES.PROFILE, element: <ProfilePage /> },
+          { path: ROUTES.WORKOUT, element: <WorkoutPage /> },
+        ],
       },
     ],
   },
