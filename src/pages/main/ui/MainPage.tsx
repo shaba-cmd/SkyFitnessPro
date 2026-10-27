@@ -1,5 +1,5 @@
 import { CourseCard, useCourses } from '@/entities/course';
-import { Button } from '@/shared/ui/Button';
+import { Button } from '@/shared/ui';
 import styles from './MainPage.module.css';
 
 export const MainPage = () => {
