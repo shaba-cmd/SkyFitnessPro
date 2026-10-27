@@ -21,12 +21,12 @@ export const CoursePage = () => {
   const { user } = useUser();
   const { openAuthModal } = useAuthModal();
   const { addCourse, isAdded, isLoading: isAdding } = useAddCourse();
-  
+
   if (isLoading) return <p>Загрузка...</p>;
   if (error || !course) return <p>{error ?? 'Курс не найден'}</p>;
-  
+
   const { image, color } = getCourseVisual(course.nameEN);
-  
+
   const added = isAdded(course._id);
   const buttonText = !user
     ? 'Войдите, чтобы добавить курс'

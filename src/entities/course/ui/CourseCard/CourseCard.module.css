@@ -65,8 +65,8 @@
   border-radius: var(--radius-card);
 }
 
-.action {
-  position: absolute;
-  top: 20px;
-  right: 20px;
+.footer {
+  display: flex;
+  flex-direction: column;
+  padding: 0 30px 15px;
 }
