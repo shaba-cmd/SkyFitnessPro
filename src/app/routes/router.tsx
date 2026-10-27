@@ -6,6 +6,7 @@ import { ROUTES } from '@/shared/config/routes';
 export const router = createBrowserRouter([
   {
     element: <MainLayout />,
+    errorElement: <p style={{ padding: 40 }}>Что-то пошло не так. Обновите страницу.</p>,
     children: [{ path: ROUTES.MAIN, element: <MainPage /> }],
   },
 ]);

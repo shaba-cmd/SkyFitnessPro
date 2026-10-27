@@ -14,6 +14,7 @@ export const UserMenu = () => {
   const [isOpen, setIsOpen] = useState(false);
 
   if (!user) return null;
+  if (!user?.email) return null;
 
   const name = user.email.split('@')[0];
 
