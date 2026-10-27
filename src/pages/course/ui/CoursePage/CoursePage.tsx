@@ -1,5 +1,5 @@
 import { useParams } from 'react-router-dom';
-import { getCourseBanner, useCourse } from '@/entities/course';
+import { getCourseVisual, useCourse } from '@/entities/course';
 import { useUser } from '@/entities/user';
 import { useAuthModal } from '@/features/auth';
 import { useAddCourse } from '@/features/add-course';
@@ -21,10 +21,12 @@ export const CoursePage = () => {
   const { user } = useUser();
   const { openAuthModal } = useAuthModal();
   const { addCourse, isAdded, isLoading: isAdding } = useAddCourse();
-
+  
   if (isLoading) return <p>Загрузка...</p>;
   if (error || !course) return <p>{error ?? 'Курс не найден'}</p>;
-
+  
+  const { image, color } = getCourseVisual(course.nameEN);
+  
   const added = isAdded(course._id);
   const buttonText = !user
     ? 'Войдите, чтобы добавить курс'
@@ -34,11 +36,9 @@ export const CoursePage = () => {
 
   return (
     <div className={styles.page}>
-      <section
-        className={styles.banner}
-        style={{ backgroundImage: `url(${getCourseBanner(course.nameEN)})` }}
-      >
+      <section className={styles.banner} style={{ backgroundColor: color }}>
         <h1 className={styles.bannerTitle}>{course.nameRU}</h1>
+        <img className={styles.bannerImg} src={image} alt="" />
       </section>
 
       <section>

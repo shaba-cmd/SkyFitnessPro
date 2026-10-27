@@ -13,13 +13,17 @@
 }
 
 .imgBox {
-  position: relative;
+  display: flex;
+  justify-content: center;
+  height: 325px;
+  overflow: hidden;
+  border-radius: var(--radius-card);
 }
 
 .img {
   display: block;
-  width: 100%;
-  border-radius: var(--radius-card);
+  height: 100%;
+  width: auto;
 }
 
 .action {
