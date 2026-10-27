@@ -5,15 +5,16 @@ import calendarIcon from '@/shared/assets/icons/calendar.svg';
 import timeIcon from '@/shared/assets/icons/time.svg';
 import difficultyIcon from '@/shared/assets/icons/difficulty.svg';
 import type { Course } from '../../model/types';
-import { getCourseVisual  } from '../../lib/courseImage';
+import { getCourseVisual } from '../../lib/courseImage';
 import styles from './CourseCard.module.css';
 
 type Props = {
   course: Course;
   action?: ReactNode;
+  footer?: ReactNode;
 };
 
-export const CourseCard = ({ course, action }: Props) => {
+export const CourseCard = ({ course, action, footer }: Props) => {
   const { image, color } = getCourseVisual(course.nameEN);
 
   return (
@@ -42,6 +43,7 @@ export const CourseCard = ({ course, action }: Props) => {
           </div>
         </div>
       </Link>
+      {footer && <div className={styles.footer}>{footer}</div>}
       {action && <div className={styles.action}>{action}</div>}
     </article>
   );

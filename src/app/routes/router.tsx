@@ -3,6 +3,9 @@ import { MainLayout } from '@/app/layouts/MainLayout';
 import { MainPage } from '@/pages/main';
 import { ROUTES } from '@/shared/config/routes';
 import { CoursePage } from '@/pages/course';
+import { ProfilePage } from '@/pages/profile';
+import { ProtectedRoute } from './ProtectedRoute';
+import { WorkoutPage } from '@/pages/workout';
 
 export const router = createBrowserRouter([
   {
@@ -11,6 +14,13 @@ export const router = createBrowserRouter([
     children: [
       { path: ROUTES.MAIN, element: <MainPage /> },
       { path: ROUTES.COURSE, element: <CoursePage /> },
+      {
+        element: <ProtectedRoute />,
+        children: [
+          { path: ROUTES.PROFILE, element: <ProfilePage /> },
+          { path: ROUTES.WORKOUT, element: <WorkoutPage /> },
+        ],
+      },
     ],
   },
 ]);

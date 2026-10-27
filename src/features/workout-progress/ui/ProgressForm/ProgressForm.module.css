@@ -1,0 +1,34 @@
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 34px;
+}
+
+.title {
+  font-size: 32px;
+  font-weight: 400;
+}
+
+.list {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  max-height: 360px;
+  overflow-y: auto;
+}
+
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  font-size: 18px;
+}
+
+.error {
+  color: var(--color-error);
+  text-align: center;
+}
+
+.btn {
+  width: 100%;
+}
