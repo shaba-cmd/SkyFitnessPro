@@ -1,9 +1,15 @@
 import { CourseCard, useCourses } from '@/entities/course';
 import { Button } from '@/shared/ui';
 import styles from './MainPage.module.css';
+import { useUser } from '@/entities/user';
+import { useAuthModal } from '@/features/auth';
+import { AddCourseButton, useAddCourse } from '@/features/add-course';
 
 export const MainPage = () => {
   const { courses, isLoading, error } = useCourses();
+  const { user } = useUser();
+  const { openAuthModal } = useAuthModal();
+  const { addCourse, isAdded } = useAddCourse();
 
   return (
     <section className={styles.hero}>
@@ -17,7 +23,15 @@ export const MainPage = () => {
 
       <div className={styles.cards}>
         {courses.map((course) => (
-          <CourseCard key={course._id} course={course} />
+          <CourseCard
+            key={course._id}
+            course={course}
+            action={
+              !isAdded(course._id) && (
+                <AddCourseButton onClick={() => (user ? addCourse(course._id) : openAuthModal())} />
+              )
+            }
+          />
         ))}
       </div>
 

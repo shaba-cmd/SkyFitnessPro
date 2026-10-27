@@ -3,14 +3,27 @@
   background: var(--color-white);
   border-radius: var(--radius-card);
   box-shadow: var(--shadow-card);
-}
-
-.imgBox {
   position: relative;
 }
 
-.img {
+.link {
+  display: block;
+  color: inherit;
+  text-decoration: none;
+}
+
+.imgBox {
+  display: flex;
+  justify-content: center;
+  height: 325px;
+  overflow: hidden;
   border-radius: var(--radius-card);
+}
+
+.img {
+  display: block;
+  height: 100%;
+  width: auto;
 }
 
 .action {
@@ -50,4 +63,10 @@
   color: var(--color-text-sec);
   background-color: var(--color-accent-sec-hover);
   border-radius: var(--radius-card);
+}
+
+.action {
+  position: absolute;
+  top: 20px;
+  right: 20px;
 }

@@ -1,0 +1,150 @@
+.page {
+  display: flex;
+  flex-direction: column;
+  gap: 60px;
+  padding: 60px 0 80px;
+}
+
+.banner {
+  height: 310px;
+  padding: 40px;
+  border-radius: var(--radius-card);
+  background-size: cover;
+  background-position: center;
+}
+
+.bannerTitle {
+  font-size: 60px;
+  font-weight: 500;
+  color: var(--color-white);
+}
+
+.heading {
+  margin-bottom: 40px;
+  font-size: 40px;
+  font-weight: 600;
+}
+
+.fitting {
+  display: flex;
+  gap: 17px;
+  list-style: none;
+}
+
+.fittingItem {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  gap: 25px;
+  padding: 20px;
+  font-size: 24px;
+  color: var(--color-white);
+  background: #151720;
+  border-radius: 28px;
+}
+
+.fittingNumber {
+  font-size: 75px;
+  font-weight: 500;
+  color: var(--color-accent);
+}
+
+.directions {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 34px;
+  padding: 30px;
+  list-style: none;
+  font-size: 24px;
+  background: var(--color-accent);
+  border-radius: 28px;
+}
+
+.cta {
+  position: relative;
+  margin-top: 100px;
+  padding: 40px;
+  background: var(--color-white);
+  border-radius: var(--radius-card);
+  box-shadow: var(--shadow-card);
+}
+
+.ctaContent {
+  position: relative;
+  z-index: 1;
+  max-width: 437px;
+}
+
+.ctaTitle {
+  margin-bottom: 28px;
+  font-size: 60px;
+  font-weight: 500;
+  line-height: 110%;
+}
+
+.benefits {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-bottom: 28px;
+  padding-left: 24px;
+  font-size: 24px;
+  color: #585757;
+}
+
+.ctaBtn {
+  width: 100%;
+}
+
+.runner {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  height: calc(100% + 100px);
+}
+
+@media (max-width: 800px) {
+  .banner {
+    height: 390px;
+  }
+
+  .bannerTitle {
+    display: none;
+  }
+
+  .heading {
+    font-size: 24px;
+    margin-bottom: 24px;
+  }
+
+  .fitting {
+    flex-direction: column;
+  }
+
+  .directions {
+    grid-template-columns: 1fr;
+    gap: 20px;
+    font-size: 18px;
+  }
+
+  .cta {
+    margin-top: 300px;
+    padding: 30px;
+  }
+
+  .ctaTitle {
+    font-size: 32px;
+  }
+
+  .benefits {
+    font-size: 18px;
+  }
+
+  .runner {
+    top: -280px;
+    bottom: auto;
+    height: 340px;
+    right: 50%;
+    transform: translateX(50%);
+  }
+}
