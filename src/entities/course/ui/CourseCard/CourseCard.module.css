@@ -3,6 +3,13 @@
   background: var(--color-white);
   border-radius: var(--radius-card);
   box-shadow: var(--shadow-card);
+  position: relative;
+}
+
+.link {
+  display: block;
+  color: inherit;
+  text-decoration: none;
 }
 
 .imgBox {
@@ -10,6 +17,8 @@
 }
 
 .img {
+  display: block;
+  width: 100%;
   border-radius: var(--radius-card);
 }
 
@@ -50,4 +59,10 @@
   color: var(--color-text-sec);
   background-color: var(--color-accent-sec-hover);
   border-radius: var(--radius-card);
+}
+
+.action {
+  position: absolute;
+  top: 20px;
+  right: 20px;
 }
