@@ -3,7 +3,7 @@ import calendarIcon from '@/shared/assets/icons/calendar.svg';
 import timeIcon from '@/shared/assets/icons/time.svg';
 import difficultyIcon from '@/shared/assets/icons/difficulty.svg';
 import plus from '@/shared/assets/icons/plus.svg';
-import type { Course } from '@/entities/course'
+import type { Course } from '@/entities/course';
 import type { ReactNode } from 'react';
 import { getCourseImage } from '@/entities/course/lib/courseImage';
 

@@ -18,8 +18,13 @@ export const UserProvider = ({ children }: { children: ReactNode }) => {
   }, []);
 
   useEffect(() => {
-    if (getToken()) refreshUser().finally(() => setIsLoading(false));
-  }, [refreshUser]);
+    if (!getToken()) return;
+
+    getMe()
+      .then(setUser)
+      .catch(() => removeToken())
+      .finally(() => setIsLoading(false));
+  }, []);
 
   const setSession = async (token: string) => {
     setToken(token);

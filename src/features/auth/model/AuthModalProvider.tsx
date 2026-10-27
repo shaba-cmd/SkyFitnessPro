@@ -1,5 +1,5 @@
 import { useCallback, useState, type ReactNode } from 'react';
-import { Modal } from '@/shared/ui/index';
+import { Modal } from '@/shared/ui';
 import { AuthForm } from '../ui/AuthForm/AuthForm';
 import { AuthModalContext } from './authModalContext';
 
