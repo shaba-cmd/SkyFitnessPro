@@ -40,7 +40,7 @@
 
 @media (max-width: 360px) {
   .logo {
-  width: 180px;
-  height: 35px;
-}
+    width: 180px;
+    height: 35px;
+  }
 }

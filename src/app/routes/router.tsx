@@ -19,6 +19,7 @@ export const router = createBrowserRouter([
         children: [
           { path: ROUTES.PROFILE, element: <ProfilePage /> },
           { path: ROUTES.WORKOUT, element: <WorkoutPage /> },
+          { path: '*', element: <p style={{ padding: 40 }}>Страница не найдена</p> },
         ],
       },
     ],
