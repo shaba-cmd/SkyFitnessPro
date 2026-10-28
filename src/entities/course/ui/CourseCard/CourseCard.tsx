@@ -5,7 +5,7 @@ import calendarIcon from '@/shared/assets/icons/calendar.svg';
 import timeIcon from '@/shared/assets/icons/time.svg';
 import difficultyIcon from '@/shared/assets/icons/difficulty.svg';
 import type { Course } from '../../model/types';
-import { getCourseVisual } from '../../lib/courseImage';
+import { getCourseColor, getCourseImage } from '../../lib/courseImage';
 import styles from './CourseCard.module.css';
 
 type Props = {
@@ -15,13 +15,11 @@ type Props = {
 };
 
 export const CourseCard = ({ course, action, footer }: Props) => {
-  const { image, color } = getCourseVisual(course.nameEN);
-
   return (
     <article className={styles.card}>
       <Link to={generatePath(ROUTES.COURSE, { courseId: course._id })} className={styles.link}>
-        <div className={styles.imgBox} style={{ backgroundColor: color }}>
-          <img className={styles.img} src={image} alt={course.nameRU} />
+        <div className={styles.imgBox} style={{ backgroundColor: getCourseColor(course.nameEN) }}>
+          <img className={styles.img} src={getCourseImage(course.nameEN)} alt={course.nameRU} />
         </div>
         <div className={styles.box}>
           <h3 className={styles.title}>{course.nameRU}</h3>

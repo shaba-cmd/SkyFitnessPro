@@ -3,3 +3,21 @@
   margin: 0 auto;
   padding: 0 16px;
 }
+
+@media (max-width: 1192px) {
+  .wrapper {
+    max-width: 1000px;
+  }
+}
+
+@media (max-width: 1060px) {
+  .wrapper {
+    max-width: 900px;
+  }
+}
+
+@media (max-width: 900px) {
+  .wrapper {
+    max-width: 800px;
+  }
+}

@@ -24,3 +24,23 @@
 .loginBtn {
   width: 103px;
 }
+
+@media (max-width: 480px) {
+  .text {
+    display: none;
+  }
+}
+
+@media (max-width: 400px) {
+  .loginBtn {
+    width: 83px;
+    padding: 8px 0;
+  }
+}
+
+@media (max-width: 360px) {
+  .logo {
+  width: 180px;
+  height: 35px;
+}
+}
