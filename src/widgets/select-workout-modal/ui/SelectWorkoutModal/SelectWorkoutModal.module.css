@@ -12,9 +12,31 @@
 .list {
   display: flex;
   flex-direction: column;
-  max-height: 360px;
+  max-height: 426ppx;
   overflow-y: auto;
+  padding-right: 20px;
   list-style: none;
+  overscroll-behavior: contain;
+}
+
+.list::-webkit-scrollbar {
+  width: 5px;
+}
+
+.list::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.list::-webkit-scrollbar-thumb {
+  background: var(--color-text);
+  border-radius: 10px;
+}
+
+@supports not selector(::-webkit-scrollbar) {
+  .list {
+    scrollbar-width: thin;
+    scrollbar-color: var(--color-text) transparent;
+  }
 }
 
 .row {
