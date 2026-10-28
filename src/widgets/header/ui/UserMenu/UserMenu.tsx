@@ -21,8 +21,8 @@ export const UserMenu = () => {
   return (
     <div className={styles.menu}>
       <button type="button" className={styles.trigger} onClick={() => setIsOpen((v) => !v)}>
-        <img src={profileIcon} alt="" />
-        <span>{name}</span>
+        <img className={styles.avatar} src={profileIcon} alt="" />
+        <span className={styles.userName}>{name}</span>
         <img src={arrowIcon} alt="" className={cn(styles.arrow, isOpen && styles.arrowOpen)} />
       </button>
 

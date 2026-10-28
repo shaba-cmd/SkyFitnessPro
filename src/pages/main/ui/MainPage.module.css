@@ -61,16 +61,38 @@
 
 @media (max-width: 1192px) {
   .cards {
-    grid-template-columns: repeat(2, 360px);
+    grid-template-columns: repeat(3, 300px);
+  }
+}
+
+@media (max-width: 1060px) {
+  .cards {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 900px) {
+  .bubble {
+    display: none;
   }
 }
 
 @media (max-width: 800px) {
   .cards {
-    grid-template-columns: 1fr;
+    grid-template-columns: 100%;
     gap: 24px;
   }
-  .bubble {
-    display: none;
+}
+
+@media (max-width: 620px) {
+  .title {
+    font-size: 44px;
+  }
+}
+
+
+@media (max-width: 480px) {
+  .title {
+    font-size: 32px;
   }
 }

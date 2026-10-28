@@ -1,11 +1,11 @@
 import { useParams } from 'react-router-dom';
-import { getCourseVisual, useCourse } from '@/entities/course';
-import { useUser } from '@/entities/user';
+import { getCourseBanner, useCourse } from '@/entities/course';
 import { useAuthModal } from '@/features/auth';
 import { useAddCourse } from '@/features/add-course';
 import { Button } from '@/shared/ui';
 import runner from '@/shared/assets/images/runner.png';
 import styles from './CoursePage.module.css';
+import { useUser } from '@/entities/user';
 
 const BENEFITS = [
   'проработка всех групп мышц',
@@ -25,8 +25,6 @@ export const CoursePage = () => {
   if (isLoading) return <p>Загрузка...</p>;
   if (error || !course) return <p>{error ?? 'Курс не найден'}</p>;
 
-  const { image, color } = getCourseVisual(course.nameEN);
-
   const added = isAdded(course._id);
   const buttonText = !user
     ? 'Войдите, чтобы добавить курс'
@@ -36,9 +34,11 @@ export const CoursePage = () => {
 
   return (
     <div className={styles.page}>
-      <section className={styles.banner} style={{ backgroundColor: color }}>
+      <section
+        className={styles.banner}
+        style={{ backgroundImage: `url(${getCourseBanner(course.nameEN)})` }}
+      >
         <h1 className={styles.bannerTitle}>{course.nameRU}</h1>
-        <img className={styles.bannerImg} src={image} alt="" />
       </section>
 
       <section>
@@ -80,7 +80,9 @@ export const CoursePage = () => {
             {buttonText}
           </Button>
         </div>
-        <img className={styles.runner} src={runner} alt="" />
+        <div className={styles.runnerBox} aria-hidden="true">
+          <img className={styles.runner} src={runner} alt="" />
+        </div>
       </section>
     </div>
   );
