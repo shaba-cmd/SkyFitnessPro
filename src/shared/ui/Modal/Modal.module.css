@@ -8,7 +8,7 @@
   background-color: rgba(0, 0, 0, 0.4);
 }
 .modal {
-  width: 360px;
+  width: 426px;
   max-width: calc(100% - 32px);
   padding: 40px;
   background-color: var(--color-white);

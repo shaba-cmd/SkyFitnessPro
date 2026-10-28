@@ -13,5 +13,6 @@
   --color-progress: #00c1ff;
   --radius-card: 30px;
   --radius-btn: 46px;
+  --page-padding: 16px;
   --shadow-card: 0 4px 67px -12px rgba(0, 0, 0, 0.13);
 }

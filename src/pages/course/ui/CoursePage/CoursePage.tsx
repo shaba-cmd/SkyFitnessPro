@@ -1,5 +1,6 @@
 import { useParams } from 'react-router-dom';
-import { getCourseBanner, useCourse } from '@/entities/course';
+import type { CSSProperties } from 'react';
+import { getCourseBanner, getCourseImage, useCourse } from '@/entities/course';
 import { useAuthModal } from '@/features/auth';
 import { useAddCourse } from '@/features/add-course';
 import { Button } from '@/shared/ui';
@@ -36,7 +37,12 @@ export const CoursePage = () => {
     <div className={styles.page}>
       <section
         className={styles.banner}
-        style={{ backgroundImage: `url(${getCourseBanner(course.nameEN)})` }}
+        style={
+          {
+            '--banner': `url(${getCourseBanner(course.nameEN)})`,
+            '--banner-mobile': `url(${getCourseImage(course.nameEN)})`,
+          } as CSSProperties
+        }
       >
         <h1 className={styles.bannerTitle}>{course.nameRU}</h1>
       </section>
@@ -47,7 +53,7 @@ export const CoursePage = () => {
           {course.fitting.map((text, index) => (
             <li key={text} className={styles.fittingItem}>
               <span className={styles.fittingNumber}>{index + 1}</span>
-              <p>{text}</p>
+              <p className={styles.fittingText}>{text}</p>
             </li>
           ))}
         </ul>

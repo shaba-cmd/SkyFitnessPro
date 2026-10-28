@@ -6,13 +6,14 @@
   box-sizing: border-box;
 }
 
-html {
-  scrollbar-gutter: stable;
-}
-
 body {
   font-family: 'Roboto', sans-serif;
   background-color: var(--color-bg);
+}
+
+html,
+body {
+  overflow-x: clip;
 }
 
 a,
@@ -20,4 +21,10 @@ button,
 input {
   font-family: 'Roboto', sans-serif;
   box-sizing: border-box;
+}
+
+@media (hover: hover) and (pointer: fine) {
+  html {
+    scrollbar-gutter: stable;
+  }
 }
